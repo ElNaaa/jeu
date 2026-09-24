@@ -32,6 +32,7 @@ list_ptr l_score_el = NULL;
 bool shoot_again;
 int score;
 int level = LEVEL_MIN;
+char nickname[50];
 
 /* Declaration of few prototypes because there is no .h file with them */
 int init_sdl(void);
@@ -45,6 +46,8 @@ void next_level(TTF_Font *font);
 void draw_sprites(list_ptr *l_sprite);
 void split(sprite_t old_comet, list_ptr **l_sprite_comet, enum sprite_type new_type);
 void split_and_score(list_ptr element, list_ptr *l_sprite_comet, bool update_score);
+void save_score(char *nickname, int score);
+void load_score(void);
 
 /* SDL Initialisation. Create windows and so on
  *  return 0 if everything is ok, otherwise 1.
@@ -309,7 +312,27 @@ void split(sprite_t old_comet, list_ptr **l_sprite_comet, enum sprite_type new_t
   **l_sprite_comet = list_add(second, **l_sprite_comet);
 }
 
+void save_score(char *nickname, int score) {
+  FILE *f = fopen("scores.txt", "a");
+  if (f) {
+    fprintf(f, "%s:%d\n", nickname, score);
+    fclose(f);
+  } else {
+    perror("Error opening score.txt: ");
+  }
+}
 
+void load_score(void) {
+  FILE *f = fopen("scores.txt", "r");
+  char line[100];
+  if (f == NULL) {
+    return;
+  }
+  while (fgets(line, sizeof(line), f)) {
+    printf("%s", line);
+  }
+  fclose(f);
+}
 
 int main(int argc, char* argv[]) {
   SDL_Surface *temp, *bg;
@@ -343,6 +366,12 @@ int main(int argc, char* argv[]) {
   l_sprite_text = list_new();
 
   // initialize score and score sprite
+  printf("SCORES:\n");
+  load_score();
+
+  printf("Enter your nickname : ");
+  scanf("%49s", nickname);
+
   score = 0;
   draw_score(font_score);
   draw_life_counter();
@@ -423,6 +452,9 @@ int main(int argc, char* argv[]) {
           printf(" ============ Game Over ============= \n");
           printf("Score: you reached level %d with %d points\n",level,score);
           fflush(stdout);
+
+          save_score(nickname, score);
+
           gameover = true;
         }
       }
