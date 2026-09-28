@@ -305,18 +305,18 @@ void split_and_score(list_ptr element, list_ptr *l_sprite_comet, bool update_sco
  * */
 void split(sprite_t old_comet, list_ptr **l_sprite_comet, enum sprite_type new_type) {
   float speed = get_base_speed(level, new_type);
-  float angle = (float)(rand()%360)/360*2*PI;
   int colorkey = old_comet->colorkey;
   int x = old_comet->x;
   int y = old_comet->y;
   int new_sprite_size = old_comet->size/2; //64 32 26
   const char * fname = get_comet_sprite(level, new_type);
-  sprite_t first = sprite_new(new_type, fname, colorkey, new_sprite_size, 32, 0, x, y, speed*cos(angle), speed*sin(angle), 0.);
-  //change angle for the second asteroid
-  angle = (float)(rand()%360)/360*2*PI;
-  sprite_t second = sprite_new(new_type, fname, colorkey, new_sprite_size, 32, 0, x, y, speed*cos(angle), speed*sin(angle), 0.);
-  **l_sprite_comet = list_add(first, **l_sprite_comet);
-  **l_sprite_comet = list_add(second, **l_sprite_comet);
+  int nb_morceaux = 2 + rand() % 3;
+  int i;
+  for (i = 0; i < nb_morceaux; i++) {
+    float angle = (float)(rand()%360)/360*2*PI;
+    sprite_t new_comet = sprite_new(new_type, fname, colorkey, new_sprite_size, 32, 0, x, y, speed*cos(angle), speed*sin(angle), 0.);
+    **l_sprite_comet = list_add(new_comet, **l_sprite_comet);
+  }
 }
 
 void save_score(char *nickname, int score) {
