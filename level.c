@@ -177,7 +177,7 @@ void gen_level(int level, list_ptr *comet_list, SDL_Surface *scr)
         v = rand()%SCREEN_HEIGHT;
       } while(is_in_seczone(v,sec_zone_y_min,sec_zone_y_max));
     }
-    int angle = (float)(rand()%360)/360*2*PI;
+    float angle = (float)(rand()%360)/360*2*PI;
     float speed = get_base_speed(level, L_COMET);
     sprite_t sprite_comet = sprite_new(L_COMET, get_comet_sprite(level, L_COMET), colorkey, 64, 32, 0, u, v, speed*cos(angle), speed*sin(angle), 0.);
     *comet_list = list_add(sprite_comet, *comet_list);
@@ -206,7 +206,7 @@ bool is_in_seczone(int val, int first, int second)
 sprite_t gen_nyancat_sprite(int level, SDL_Surface *scr)
 {
   int colorkey;;
-  int angle = (float)(rand()%360)/360*2*PI;
+  float angle = (float)(rand()%360)/360*2*PI;
   float dx = NYANCAT_SPEED*cos(angle);
   ///////
   int sprite_size, anim_sprite_num_max;

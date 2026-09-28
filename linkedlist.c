@@ -31,7 +31,7 @@ list_ptr list_add(sprite_t sprite, list_ptr list)
  * */
 bool list_is_empty(list_ptr l)
 {
-  return 1 == NULL;
+  return l == NULL;
 }
 
 /* Return the next cel in list or NULL

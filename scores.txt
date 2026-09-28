@@ -1,3 +1,5 @@
 toto42:1000
 schtroumpf:470
 paupaul:20
+paupau1:0
+elena:1500

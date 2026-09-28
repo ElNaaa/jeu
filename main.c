@@ -298,7 +298,7 @@ void split_and_score(list_ptr element, list_ptr *l_sprite_comet, bool update_sco
  * */
 void split(sprite_t old_comet, list_ptr **l_sprite_comet, enum sprite_type new_type) {
   float speed = get_base_speed(level, new_type);
-  int angle = (float)(rand()%360)/360*2*PI;
+  float angle = (float)(rand()%360)/360*2*PI;
   int colorkey = old_comet->colorkey;
   int x = old_comet->x;
   int y = old_comet->y;
