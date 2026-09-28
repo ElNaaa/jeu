@@ -103,6 +103,12 @@ void list_remove(list_ptr elt, list_ptr *l)
  * */
 void list_free(list_ptr l)
 {
+  list_ptr next;
+  while (l != NULL) {
+    next = l->next;
+    free(l);
+    l = next;
+  }
 }
 
 /* Return the length of a list
@@ -121,6 +127,18 @@ int list_length(list_ptr l)
  * */
 void list_reverse(list_ptr * l)
 {
+  list_ptr previous = NULL;
+  list_ptr current;
+  list_ptr next;
+
+  current = *l;
+  while (current != NULL) {
+    list_ptr next = current->next;
+    current->next = previous;
+    previous = current;
+    current = next;
+  }
+  *l = previous;
 }
 
 /* Copy a list to another one. 
@@ -128,5 +146,25 @@ void list_reverse(list_ptr * l)
  * */
 list_ptr list_clone(list_ptr list)
 {
-  return NULL;
+  list_ptr new_list = NULL;
+  list_ptr tail = NULL;
+  list_ptr new_node;
+  while (list != NULL) {
+    new_node = malloc(sizeof(*new_node));
+    if (new_node == NULL) {
+      fprintf(stderr, "Error: failed to allocate memory for new node\n");
+      exit(EXIT_FAILURE);
+    }
+    new_node->data = list->data;
+    new_node->next = NULL;
+    if (new_list == NULL) {
+      new_list = new_node;
+    }
+    else {
+      tail->next = new_node;
+    }
+    tail = new_node;
+    list = list->next;
+  }
+  return new_list;
 }
