@@ -15,16 +15,16 @@ list_ptr list_new(void)
  * */
 list_ptr list_add(sprite_t sprite, list_ptr list)
 {
-  list_ptr new_node;
+  list_ptr nn;
 
-  new_node = malloc(sizeof(*new_node));
-  if (!new_node) {
-    fprintf(stderr, "Error: failed to allocate memory for new node\n");
+  nn = malloc(sizeof(*nn));
+  if (!nn) {
+    fprintf(stderr, "Memory Error\n");
     exit(EXIT_FAILURE);
   }
-  new_node->data = sprite;
-  new_node->next = list;
-  return new_node;
+  nn->data = sprite;
+  nn->next = list;
+  return nn;
 }
 
 /* Return true if the list is empty
@@ -149,25 +149,25 @@ void list_reverse(list_ptr * l)
  * */
 list_ptr list_clone(list_ptr list)
 {
-  list_ptr new_list = NULL;
-  list_ptr tail = NULL;
-  list_ptr new_node;
+  list_ptr nl = NULL;
+  list_ptr node = NULL;
+  list_ptr nn;
   while (list != NULL) {
-    new_node = malloc(sizeof(*new_node));
-    if (new_node == NULL) {
-      fprintf(stderr, "Error: failed to allocate memory for new node\n");
+    nn = malloc(sizeof(*nn));
+    if (nn == NULL) {
+      fprintf(stderr, "Memory Error\n");
       exit(EXIT_FAILURE);
     }
-    new_node->data = list->data;
-    new_node->next = NULL;
-    if (new_list == NULL) {
-      new_list = new_node;
+    nn->data = list->data;
+    nn->next = NULL;
+    if (nl == NULL) {
+      nl = nn;
     }
     else {
-      tail->next = new_node;
+      node->next = nn;
     }
-    tail = new_node;
+    node = nn;
     list = list->next;
   }
-  return new_list;
+  return nl;
 }
