@@ -16,7 +16,14 @@
 #define NUMBER_OF_LIFES     5
 #include "level.h"
 
-#define GDB()  __asm__("int $0x3")
+//#define GDB()  __asm__("int $0x3")
+#if defined(__aarch64__)
+    #define GDB() __asm__("brk #0")
+#elif defined(__x86_64__) || defined(__i386__)
+    #define GDB() __asm__("int $0x3")
+#else
+    #define GDB()
+#endif
 //#define GDB() __builtin_trap();
 
 bool gameover;
