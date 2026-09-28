@@ -181,6 +181,7 @@ void gen_level(int level, list_ptr *comet_list, SDL_Surface *scr)
     float speed = get_base_speed(level, L_COMET);
     sprite_t sprite_comet = sprite_new(L_COMET, get_comet_sprite(level, L_COMET), colorkey, 64, 32, 0, u, v, speed*cos(angle), speed*sin(angle), 0.);
     *comet_list = list_add(sprite_comet, *comet_list);
+    printf("DEBUG: comet %d created, list=%p\n", i, (void *)*comet_list);
   }
   sprite_t sprite_nyancat = gen_nyancat_sprite(level, scr);
   *comet_list = list_add(sprite_nyancat, *comet_list);
