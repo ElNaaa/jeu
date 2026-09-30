@@ -198,10 +198,10 @@ void next_level( TTF_Font * font) {
   char text[1024];
   sprite_t sprite_text;
 
-  printf("DEBUG: Congratulation! You won the level %d (score=%d)\n",level,score);
+  // printf("DEBUG: Congratulation! You won the level %d (score=%d)\n",level,score);
   fflush(stdout);
   level++;
-  printf("DEBUG: Start level %d, good luck!\n",level);
+  // printf("DEBUG: Start level %d, good luck!\n",level);
   fflush(stdout);
   // Add the "next level" text sprite to the text sprite list
   sprintf(text, "LEVEL %d", level);
