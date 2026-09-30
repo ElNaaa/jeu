@@ -12,13 +12,16 @@ list_ptr list_new(void)
 
 /* Add a new cel to a list. 
  *  store the sprite_t to the new cel
+ *  create a new node and add it to the list
+ *  treatement of memory allocation error
+ *  return the new list
  * */
 list_ptr list_add(sprite_t sprite, list_ptr list)
 {
-  list_ptr nn;
+  list_ptr nn; 
 
   nn = malloc(sizeof(*nn));
-  if (!nn) {
+  if (nn == NULL) { 
     fprintf(stderr, "Memory Error\n");
     exit(EXIT_FAILURE);
   }
@@ -31,10 +34,10 @@ list_ptr list_add(sprite_t sprite, list_ptr list)
  * */
 bool list_is_empty(list_ptr l)
 {
-  if(!l) {
+  if(l == NULL) {
     return true;
   }
-  return NULL;
+  return false;
 }
 
 /* Return the next cel in list or NULL
@@ -109,6 +112,7 @@ void list_free(list_ptr l)
   list_ptr next;
   while (l != NULL) {
     next = l->next;
+    sprite_free(l->data);
     free(l);
     l = next;
   }
