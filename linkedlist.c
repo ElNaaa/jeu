@@ -140,7 +140,7 @@ void list_reverse(list_ptr * l)
 
   current = *l;
   while (current != NULL) {
-    list_ptr next = current->next;
+    next = current->next;
     current->next = previous;
     previous = current;
     current = next;

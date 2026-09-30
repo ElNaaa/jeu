@@ -2,6 +2,10 @@
 README
 ======
 
+=========================================
+Contributors : Islem FOUDIL et Eléna POLL
+=========================================
+
 1. Compiling & running
 2. Sprites conventions
 3. Playing
@@ -11,7 +15,7 @@ README
 ======================
 
 Compiling:
-$> make
+$> make -B
 
 Running:
 $> ./cometbuster
