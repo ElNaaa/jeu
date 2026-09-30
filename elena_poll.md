@@ -41,13 +41,13 @@ Participations
 Bilan
 =====
 
-J'ai eu du mal à comprendre le fonctionnement globale du jeu avec le nombre important de fichiers car je n'avais jamais travaillé sur un jeu aussi dense. J'ai essayé tout d'abord de comprendre le fonctionnement de chaque fichier et j'ai consulté le readme, ce qui m'a permis de comprendre quel fichier était utilisé pour quelle fonction. Je n'ai pas compris entièrement le code pour les collisions. 
+J'ai eu du mal à comprendre le fonctionnement global du jeu avec le nombre important de fichiers car je n'avais jamais travaillé sur un jeu aussi dense. J'ai essayé tout d'abord de comprendre le fonctionnement de chaque fichier et j'ai consulté le readme, ce qui m'a permis de comprendre quel fichier était utilisé pour quelle fonction. Je n'ai pas compris entièrement le code pour les collisions. 
 
-J'ai ensuite compilé le code pour voir le fonctionnement et me suis rendue compte du non-affichage des astéroïdes. J'ai ensuite pu commencer à compléter le code. Avec Islem, on a décidé de se séparer les taches selon nos affinités. 
+J'ai ensuite compilé le code pour voir le fonctionnement et me suis rendue compte du non-affichage des astéroïdes. J'ai ensuite pu commencer à compléter le code. Avec Islem, on a décidé de se séparer les tâches selon nos affinités. 
 
-Pour le fichier linkedlist.c, j'ai effectué les fonctions après qu'Islem ait complété la fonction list_add pour mieux assimiler la structure des éléments. J'ai réalisé mes fonctions en vérifiant au préalable si la liste fournie était vide ou pas. Pour la fonction list_free, j'ai fait le choix d'ajouter une liste nommée next pour mettre temporairement la suite de la liste au fur et à mesure que je supprime l'élement en tete et libère la mémoire en utilisant les fonctions free() et sprite_free() pour libérer la cellule et le sprite.
+Pour le fichier linkedlist.c, j'ai effectué les fonctions après qu'Islem a complété la fonction list_add pour mieux assimiler la structure des éléments. J'ai réalisé mes fonctions en vérifiant au préalable si la liste fournie était vide ou pas. Pour la fonction list_free, j'ai fait le choix d'ajouter une liste nommée next pour mettre temporairement la suite de la liste au fur et à mesure que je supprime l'élement en tete et libère la mémoire en utilisant les fonctions free() et sprite_free() pour libérer la cellule et le sprite.
 
-Une fois ce fichier complété, j'ai également modifié les informations éronnées que j'avais repéré (int angle = (float) que j'ai modifié en float angle = (float)) dans les fichiers main et level. Apres le changement, le vaisseau tournait plus fluidement. Nous avons ensuite choisi de rajouter la possibilité que les astéroïdes se séparent en 2,3 ou 4 élements de manière aléatoire en utilisant rand() utilisé déjà dans le jeu. J'ai recherché des renseignements au sujet de la fonction car je ne la connaissais pas. 
+Une fois ce fichier complété, j'ai également modifié les informations eronnées que j'avais repérées (int angle = (float) que j'ai modifié en float angle = (float)) dans les fichiers main et level. Apres le changement, le vaisseau tournait plus fluidement. Nous avons ensuite choisi de rajouter la possibilité que les astéroïdes se séparent en 2,3 ou 4 éléments de manière aléatoire en utilisant rand() utilisé déjà dans le jeu. J'ai recherché des renseignements au sujet de la fonction car je ne la connaissais pas. 
 
 Ce projet m'a permis de comprendre mieux la programmation en C et de découvrir de nouvelles fonctionnalités. 
 
