@@ -49,6 +49,6 @@ Pour le fichier linkedlist.c, j'ai effectué les fonctions après qu'Islem a com
 
 Une fois ce fichier complété, j'ai également modifié les informations eronnées que j'avais repérées (int angle = (float) que j'ai modifié en float angle = (float)) dans les fichiers main et level. Apres le changement, le vaisseau tournait plus fluidement. Nous avons ensuite choisi de rajouter la possibilité que les astéroïdes se séparent en 2,3 ou 4 éléments de manière aléatoire en utilisant rand() utilisé déjà dans le jeu. J'ai recherché des renseignements au sujet de la fonction car je ne la connaissais pas. 
 
-Ce projet m'a permis de comprendre mieux la programmation en C et de découvrir de nouvelles fonctionnalités. 
+Ce projet m'a permis de mieux comprendre la programmation en C et de découvrir de nouvelles fonctionnalités. Cela m'a permis de me rendre compte concrètement de ce qu'on peut faire avec le langage C. Les fonctions que nous avons réalisé, m'ont permis de réviser le contrôle ainsi que de mieux comprendre certains TP. 
 
 De plus, nous avons utilisé l'IA pour nous aider à comprendre le jeu et certaines fonctions plus complexes. Nous avons également repris les corrections de TD et TP pour réaliser les fonctions.
