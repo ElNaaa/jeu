@@ -20,22 +20,23 @@ Ce projet a mobilisé nos capacités d'analyse et de comprenhension ainsi que le
 Participations
 ==============
 
-| Fichier | Fonction | Contributeur |
-| linkedlist | list_add | Islem |
-| linkedlist | is_empty | Eléna |
-| linkedlist | list_next | Eléna |
-| linkedlist | list_head_sprite | Eléna |
-| linkedlist | list_pop_sprite | Islem |
-| linkedlist | list_remove | Islem |
-| linkedlist | list_free | Eléna |
-| linkedlist | list_lenght | Eléna |
-| linkedlist | list_reverse | Islem |
-| linkedlist | list_clone | Islem |
-| main | save_score | Islem |
-| main | load_score | Islem |
-| level | replace int -> float for angle | Eléna |
-| main | replace int -> float for angle | Eléna |
-| main | add nb_morceaux | Eléna |
+| Fichier    | Fonction                       | Contributeur |
+|------------|--------------------------------|--------------|
+| linkedlist | `list_add`                     | islem        |
+| linkedlist | `list_is_empty`                | elena        |
+| linkedlist | `list_next`                    | elena        |
+| linkedlist | `list_head_sprite`             | elena        |
+| linkedlist | `list_pop_sprite`              | islem        |
+| linkedlist | `list_remove`                  | islem        |
+| linkedlist | `list_free`                    | elena        |
+| linkedlist | `list_length`                  | elena        |
+| linkedlist | `list_reverse`                 | islem        |
+| linkedlist | `list_clone`                   | islem        |
+| main       | `save_score`                   | islem        |
+| main       | `load_score`                   | islem        |
+| main       | `add_nb_morceaux`              | elena        |
+| main       | `replace int to float for angle` | elena      |
+| level      | `replace int to float for angle` | elena      |
 
 =====
 Bilan
